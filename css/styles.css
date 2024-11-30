@@ -1,0 +1,814 @@
+/* Хочу сразу предупредить, что в макете у некоторых текстовых контейнеров я приподнимала нижнюю часть к буквам, чтобы установить корректный для себя отступ, так как без этого текстовые контейнеры накладываются друг на друга и отступ выходит неверным. */
+
+/* Некоторые размеры опять-таки подгоняла или округляла, так как могли быть заданы некорректно. */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  color: #000;
+  font-size: 21px;
+  letter-spacing: 0.05em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Проанализировав макет, установила ему единый контейнер, так как основные размеры блоков ему подходят, но в макете некоторые блоки некорректны установлены или вовсе вылетают за пределы, поэтому предполагаю, что они все идут под одним контейнером шириной 995 пикселей. */
+.container {
+  margin: 0 auto;
+  max-width: 995px;
+  width: 100%;
+}
+
+/* header section styles    */
+
+.header_active {
+  background: #ffe4b5;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  transition: 0.2s linear;
+  padding-bottom: 20px;
+  z-index: 100;
+}
+
+.header__burger {
+  display: none;
+  width: 50px;
+  height: 40px;
+}
+
+.burger__line {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #f266ab;
+}
+
+.header__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 70px;
+}
+
+.header__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 37px;
+}
+
+.header__link {
+  color: #000;
+  font-size: 20px;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.header__link:hover,
+.header__link:active {
+  opacity: 0.7;
+}
+
+/* Для себя*/
+/* .header__item {
+  margin-right: 37px;
+} */
+
+/* .header__item:last-child {
+  margin-right: 0px;
+} */
+
+.header__apps {
+  display: flex;
+  gap: 13px;
+  margin-top: 11px;
+}
+
+/* intro section styles */
+.intro {
+  padding-top: 201px;
+  margin-bottom: 94.14px;
+}
+
+.intro__container {
+  display: flex;
+  align-items: center;
+}
+
+.intro__text {
+  margin-right: -39px;
+}
+
+.intro__image_container {
+  z-index: -1;
+  width: 553px;
+}
+
+.intro__image {
+  width: 100%;
+  height: auto;
+}
+
+/* Тоже для себя черновик как вариант */
+/* .intro__image { */
+/* height: 566px;
+  width: 553px; */
+/* position: relative;
+  left: -47px;
+  z-index: -1;
+} */
+
+.intro__greating {
+  font-size: 20px;
+  padding-top: 124px;
+  max-width: 76px;
+}
+
+.intro__name {
+  max-width: 121px;
+  font-size: 32px;
+  font-weight: 500;
+  color: #2cd3e1;
+  letter-spacing: 0.075em;
+  margin-top: 16px;
+}
+
+.intro__title {
+  font-size: 90px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.intro__title__second {
+  max-width: 414px;
+  font-size: 90px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  margin-left: 125px;
+}
+
+.r {
+  color: black;
+  opacity: 55%;
+}
+
+.intro__subtitle {
+  max-width: 510px;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.09em;
+  margin-bottom: 38px;
+}
+
+.intro__button {
+  padding: 20px 52px;
+  letter-spacing: 0.03em;
+  color: white;
+  background: #f266ab;
+  border-radius: 5px;
+  border: none;
+}
+
+.intro__button:hover,
+.intro__button:focus {
+  background: #f787bf;
+}
+
+/* about me section styles */
+.about__me {
+  margin-bottom: 92.72px;
+}
+
+.about__me__container {
+  display: flex;
+  gap: 14.68px;
+}
+
+.about__me__title {
+  font-size: 65px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 33px;
+}
+
+.about__me__subtitle {
+  letter-spacing: 0.09em;
+}
+
+.about__me__point {
+  font-size: 24px;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  margin-top: 25px;
+  margin-bottom: 5px;
+  /* так как margin-top тут у всех разный, я задала единый отступ 25px */
+}
+
+/* services section styles */
+.services {
+  margin-bottom: 81px;
+}
+
+.services__title {
+  font-size: 65px;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.services__subtitle {
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 84px;
+  margin-left: 31px;
+  margin-right: 32px;
+  max-width: 932px;
+}
+
+.services__card__title {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 21px;
+}
+
+.services__card__desc {
+  font-size: 19px;
+  letter-spacing: 0.03em;
+}
+
+.services__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 176px 176px;
+  row-gap: 60px;
+  justify-items: center;
+  align-items: center;
+  max-width: 995px;
+}
+
+.services__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 176px;
+  max-width: 301px;
+}
+
+.services__card__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.services__image {
+  max-width: 100%;
+  position: relative;
+  top: 100px;
+  right: 20px;
+}
+
+.services__cards > .card_1 {
+  grid-column: 1; /* Секция 1 занимает первую колонку */
+}
+
+.services__cards > .card_2 {
+  grid-column: 3; /* Секция 2 занимает третью колонку */
+}
+
+.services__cards > .services__card__img {
+  grid-column: 2; /* Картинка по центру, занимает всю вторую колонку */
+}
+
+.services__cards > .card_3 {
+  grid-column: 1; /* Секция 3 занимает первую колонку второй строки */
+}
+
+.services__cards > .card_4 {
+  grid-column: 3; /* Секция 4 занимает третью колонку второй строки */
+}
+
+/* my projects section styles */
+.projects {
+  margin-bottom: 93px;
+}
+
+.projects__title {
+  font-size: 65px;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.projects__subtitle {
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 49px;
+  margin-left: 41px;
+  margin-right: 30px;
+  max-width: 921px;
+}
+
+.projects__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 62px;
+}
+
+.projects__button {
+  padding: 10px 20px 10px 20px;
+  letter-spacing: 0.03em;
+  font-size: 24px;
+  color: #000;
+  background: #2dd3e1;
+  border-radius: 12px;
+  border: #545454;
+}
+
+.projects__button:hover,
+.projects__button:focus {
+  background: #f266ab;
+  color: #fff;
+}
+
+.projects__frames {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+}
+
+/* testimonials section styles */
+.testimonials {
+  margin-bottom: 168px;
+}
+
+.testimonials__container {
+  max-width: 932px;
+}
+
+.testimonials__title {
+  text-align: center;
+  font-size: 65px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 41px;
+}
+
+.testimonials__subtitle {
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 46px;
+  max-width: 932px;
+}
+
+.testimonials__carousel__container {
+  margin: 0 auto;
+  height: 539px;
+  max-width: 591px;
+}
+
+.testimonials__card {
+  position: relative;
+  top: -150px;
+  width: 591px;
+  height: 421px;
+  background-color: #ffe4b5;
+  border: 8px solid rgba(242, 102, 171, 0.4);
+}
+
+.profile__foto {
+  position: relative;
+  z-index: 1;
+  left: 160px;
+}
+
+.commas_2 {
+  position: relative;
+  z-index: 1;
+  right: 240px;
+}
+
+.commas_1 {
+  position: relative;
+  z-index: 1;
+  left: 80px;
+}
+
+.testimonials__info {
+  padding-top: 156px;
+  text-align: center;
+}
+
+.testimonials__name,
+.testimonials__job {
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+.testimonials__description {
+  margin: 0 auto;
+  width: 479px;
+  margin-top: 29px;
+  letter-spacing: 0.03em;
+  line-height: 28px;
+  margin-bottom: 36px;
+}
+
+.testimonials__carousel__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 55px;
+}
+
+.testimonials__carousel__button {
+  width: 57px;
+  height: 16px;
+  border-radius: 8px;
+  border: none;
+  color: #d9d9d9;
+}
+
+.testimonials__carousel__button:hover,
+.testimonials__carousel__button:focus {
+  background-color: #f266ab;
+}
+
+/* feedback section styles */
+.feedback {
+  margin-bottom: 113px;
+}
+
+.feedback__container {
+  max-width: 932px;
+  margin: 0 auto;
+}
+
+.feedback__title {
+  text-align: center;
+  font-size: 65px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 41px;
+}
+
+.feedback__subtitle {
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 62px;
+  max-width: 932px;
+}
+
+.feedback__form {
+  text-align: center;
+}
+
+.feedback__input {
+  height: 75px;
+  width: 627px;
+  color: #f8f8f8;
+  border-color: #afafaf;
+  border-radius: 14px;
+  letter-spacing: 0.03em;
+}
+
+::placeholder {
+  padding-left: 26px;
+}
+
+.feedback__button {
+  margin-left: 25px;
+  padding: 20px 36px 20px 36px;
+  font-size: 24px;
+  color: #fff;
+  background: #f266ab;
+  border-radius: 14px;
+  border: none;
+}
+
+.feedback__button:hover,
+.feedback__button:focus {
+  background: #f787bf;
+  color: #fff;
+}
+
+/* footer section styles */
+.footer {
+  background-color: #ffe4b5;
+  margin: 0 auto;
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer__image {
+  align-self: center;
+  padding-top: 28px;
+}
+
+.footer__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 37px;
+  margin-top: 34px;
+  margin-bottom: 72px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: #000;
+}
+
+.footer__link:hover,
+.footer__link:active {
+  opacity: 0.7;
+}
+
+.footer__apps {
+  display: flex;
+  justify-content: center;
+  gap: 33px;
+  margin-bottom: 46.49px;
+}
+
+.footer__politics {
+  background-color: #a459d1;
+  height: 67px;
+}
+.footer__text {
+  text-align: center;
+  padding-top: 20px;
+  color: white;
+  letter-spacing: 0.03em;
+  font-weight: 300;
+}
+
+.footer__span {
+  color: #2cd3e1;
+  letter-spacing: 0.03em;
+  font-weight: bold;
+}
+
+/* Адаптив. Медиазапросы */
+/* Для бургер-меню */
+@media screen and (max-width: 1084px) {
+  .container {
+    margin: 0 auto;
+    max-width: 995px;
+    padding: 0px 20px;
+  }
+
+  .header__burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .header__nav {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffe4b5;
+    padding: 75px;
+
+    transform: translateX(100%);
+    transition: 0.3s all linear;
+  }
+
+  .header__nav_active {
+    transform: translateX(0%);
+  }
+
+  .header__list {
+    flex-direction: column;
+  }
+
+  .header__link {
+    font-size: 42px;
+  }
+
+  .header__nav-close {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .header__nav-close-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+  }
+  .header__nav-close-line:first-child {
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .header__nav-close-line:last-child {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+
+/* Адаптив для планшетов от 768px с учётом брейкпоинта в intro и feedback(contact) */
+@media screen and ((min-width: 768px) and (max-width: 1000px)) {
+  .intro {
+    padding-top: 100px;
+  }
+
+  .intro__title {
+    font-size: 64px;
+  }
+
+  .intro__title__second {
+    font-size: 64px;
+  }
+
+  .intro__image_container {
+    position: relative;
+    top: 30px;
+    left: 30px;
+  }
+
+  .testimonials {
+    margin-bottom: 100px;
+  }
+
+  .feedback__input {
+    margin-bottom: 15px;
+  }
+}
+
+/* Адаптив для мобильных телефонов */
+@media screen and (max-width: 767px) {
+  .intro {
+    padding-top: 100px;
+  }
+
+  .intro__image_container {
+    display: none;
+  }
+
+  .intro__title {
+    font-size: 54px;
+  }
+
+  .intro__title__second {
+    font-size: 54px;
+  }
+
+  .r {
+    opacity: 100%;
+  }
+
+  .about__me__title {
+    font-size: 48px;
+  }
+
+  .services__title {
+    font-size: 48px;
+  }
+
+  .projects__title {
+    font-size: 48px;
+  }
+
+  .testimonials__title {
+    font-size: 48px;
+  }
+
+  .feedback__title {
+    font-size: 48px;
+  }
+
+  .about__me__image {
+    display: none;
+  }
+
+  .testimonials {
+    margin-bottom: 100px;
+  }
+
+  .testimonials__subtitle {
+    margin-bottom: 60px;
+  }
+
+  .services__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .services__image {
+    margin: 20px 0px;
+    width: 80%;
+    height: 80%;
+    top: 5px;
+    right: 5px;
+  }
+
+  .services__subtitle {
+    margin-bottom: 50px;
+  }
+
+  .services__card__desc {
+    text-align: center;
+    font-size: 21px;
+  }
+
+  .testimonials__card {
+    margin: 0 auto;
+    position: relative;
+    top: -150px;
+    width: 320px;
+    height: 500px;
+    background-color: #ffe4b5;
+    border: 5px solid rgba(242, 102, 171, 0.4);
+  }
+
+  .testimonials__carousel__buttons {
+    margin-top: 4px;
+  }
+
+  .profile__foto {
+    position: relative;
+    height: 130px;
+    width: 130px;
+    z-index: 1;
+    left: 120px;
+  }
+
+  .commas_2 {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    z-index: 1;
+    right: 70px;
+    bottom: 50px;
+  }
+
+  .commas_1 {
+    position: relative;
+    height: 38px;
+    width: 48px;
+    z-index: 1;
+    left: 65px;
+    bottom: 50px;
+  }
+
+  .testimonials__description {
+    width: 300px;
+  }
+
+  .feedback__input {
+    width: 300px;
+    height: 75px;
+    margin-bottom: 15px;
+  }
+
+  .footer__apps {
+    flex-wrap: wrap;
+  }
+}
